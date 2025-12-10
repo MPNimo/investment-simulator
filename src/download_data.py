@@ -1,7 +1,12 @@
+#%%
+
 import os
 from datetime import datetime
 import pandas as pd
 import yfinance
+
+
+#%%
 
 # Parámetros básicos del proyecto
 TICKERS = ["AAPL", "MSFT", "^GSPC"]  # Puedes cambiar/añadir
@@ -11,6 +16,8 @@ END_DATE = datetime.today().strftime("%Y-%m-%d")
 DATA_DIR = os.path.join("data", "raw")
 os.makedirs(DATA_DIR, exist_ok=True)
 
+
+#%%
 
 def download_ticker(ticker: str) -> pd.DataFrame:
     """
@@ -23,6 +30,8 @@ def download_ticker(ticker: str) -> pd.DataFrame:
     df["Ticker"] = ticker
     return df
 
+
+#%%
 
 def main():
     all_data = []
